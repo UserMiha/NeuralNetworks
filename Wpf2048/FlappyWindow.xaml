@@ -1,0 +1,35 @@
+﻿<Window x:Class="Wpf2048.FlappyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf2048"
+        mc:Ignorable="d"
+        Title="FlappyWindow" Height="800" Width="800" Loaded="FlappyWindow_OnLoaded" Closing="OnClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="restart" Margin="5" Click="RestartClick"/>
+            <Button Content="x1" Margin="5" Click="Onx1Click"/>
+            <Button Content="x2" Margin="5" Click="Onx2Click"/>
+            <Button Content="x3" Margin="5" Click="Onx3Click"/>
+            <Button Content="x5" Margin="5" Click="Onx5Click"/>
+            <Button Content="max" Margin="5" Click="OnMaxClick" Height="20" VerticalAlignment="Top"/>
+        </StackPanel>
+
+
+        <DockPanel Grid.Row="1" Background="AliceBlue">
+
+            <Canvas Name="Canvas" Width="500" Height="512" >
+
+            </Canvas>
+        </DockPanel>
+
+
+    </Grid>
+</Window>

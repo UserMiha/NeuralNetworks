@@ -1,0 +1,52 @@
+﻿<Window x:Class="Wpf2048.Game2048Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf2048"
+        mc:Ignorable="d"
+        Title="Game2048" Height="500" Width="500" Loaded="OnWindowLoaded" Closing="Game2048Window_OnClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="restart" Margin="5" Click="RestartClick"/>
+            <Button Content="x1" Margin="5" Click="Onx1Click"/>
+            <Button Content="x2" Margin="5" Click="Onx2Click"/>
+            <Button Content="x3" Margin="5" Click="Onx3Click"/>
+            <Button Content="x5" Margin="5" Click="Onx5Click"/>
+            <Button Content="max" Margin="5" Click="OnMaxClick" Height="20" VerticalAlignment="Top"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Label>MaxScore:</Label>
+                <Label Name="MaxScoreLabel"></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label>MaxSumScore:</Label>
+                <Label Name="MaxSumScoreLabel"></Label>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label>Generation:</Label>
+                <Label Name="GenerationLabel"></Label>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label>Alives:</Label>
+                <Label Name="AlivesLabel"></Label>
+            </StackPanel>
+        </StackPanel>
+        
+        <DockPanel Grid.Row="2" Name="FieldPanel" Dock="Top" Margin="10" >
+
+        </DockPanel>
+    </Grid>
+</Window>
